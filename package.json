@@ -1,0 +1,24 @@
+{
+  "name": "495_cyber_crime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "brcypt": "^1.0.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "formidable": "^3.5.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.16",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^3.1.7"
+  }
+}

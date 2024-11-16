@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Prompt", system-ui;
+}
+.navbar-brand {
+    color: #fafafa;
+}
+
+.navbar-nav .nav-item a {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #fafafa;
+}
+
+.card {
+    height: 350px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 800ms ease;
+}
+
+.btn-light:hover {
+    background-color: #081043;
+    transition: 800ms ease;
+    color: #fafafa;
+}
+
+.navbar-nav .nav-item a:hover {
+    color: rgb(76, 130, 212);
+    transform: scale(1.1);
+}
+
+.nav-item .active {
+    color: rgb(76, 130, 212) !important;
+}
+
+.nav-item {
+    padding-right: 30px;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+@keyframes MoveIn {
+    0% {
+        bottom: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes Fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#move {
+    position: relative;
+    animation: MoveIn 800ms ease 1 300ms forwards;
+    opacity: 0;
+}
+
+.fade {
+    position: relative;
+    animation: Fade 1s ease 1 900ms forwards;
+    opacity: 0;
+}
+
+.card-img-top {
+    height: 260px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #000000;
+}
+
+#headline {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#headline-red {
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(41, 90, 226);
+}
+
+.img-bank {
+    height: 70px;
+    width: 70px;
+}
+
+.text-primary {
+    color: #49d9ff;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+

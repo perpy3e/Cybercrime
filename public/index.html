@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER CRIME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href="sty.css" rel="stylesheet">
+    <script src="main.js"></script>
+    <script>
+        // Fetch the current visit count from the API and update the page
+        function updateVisitCount() {
+            fetch('/api/visits')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('counter').innerText = data.totalCount;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        updateVisitCount()
+
+        function checkLoginStatus() {
+            fetch('/login/status')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status) {
+                    const loginLink = document.getElementById("loginLink");
+                    loginLink.style.display = "none";
+                } else {
+                    const Logout = document.getElementById("logoutLink");
+                    Logout.style.display = "none";
+                }
+            })
+        }
+        
+        // Call the function to update the visit count when the page loads
+        window.onload = function() {
+            updateVisitCount();
+            checkLoginStatus();
+        }
+        
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #101720; height: 90px;">
+            <div class="container-fluid d-flex">
+                <a class=" navbar-brand mb-0 h1" href="/home"><img src="./img/logo.png" width="auto" height="30">
+                    CYBER CRIME INVESTIGATION BUREAU</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" style="margin-right: 100px;"
+                    id="navbarNav">
+                    <ul class="navbar-nav nav" style="width: 100%; justify-content: end;">
+                        <li class="nav-item active">
+                            <a class="nav-link active" href="/home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/news">NEWS AND UPDATES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login" id="loginLink">LOG IN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout" id="logoutLink">LOG OUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid text-center mb-5" style="background-image: url(./img/bg.jpg); background-size: cover; background-position: center; min-height: 60vh;
+    position: relative; overflow: hidden;">
+        <div class=" pr-5 pl-5; mt-5 align-items-center" style="position: absolute; z-index: 2; color: white;;
+    right: 0; left: 0;">
+
+            <div class="row">
+
+            </div>
+            <div class="row row-cols-1 align-items-center">
+                <div class="col mb-3" style="margin-top: 3rem; text-shadow: 2px 2px 5px black;" id="move">
+                    <h1 class="text-center"> Welcome, <strong id="username" style="text-transform: capitalize;">Loading...</strong> </h1>
+                    <hr><br><br>
+                    <h1>CYBER CRIME INVESTIGATION BUREAU</h1>
+                    <h4>Stay Safe in the Digital World: Your Resource for Understanding Cybercrime</h4>
+                    <p>This page has been visited <strong id="counter">0</strong> time(s)</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container-lg mt-5 p-2 text-center">
+        <span id="headline">What's <span id="headline-red" class="fade">Cyber Crime</span></span>
+        <div class="container-sm mt-4" style="font-size: 20px;">
+            <span>Cybercrime encompasses a wide range of criminal activities that are carried out using
+                digital devices
+                and/or networks. These crimes involve the use of technology to commit fraud, identity theft, data
+                breaches,
+                computer viruses, scams, and expanded upon in other malicious acts. Cybercriminals exploit
+                vulnerabilities
+                in computer systems and networks to gain unauthorized access, steal sensitive information, disrupt
+                services,
+                and cause financial or reputational harm to individuals, organizations, and governments</span>
+        </div>
+    </div>
+
+    <div class="container-lg mt-5 p-2">
+        <h2>Discovery Resource</h2>
+    </div>
+
+    <div class="container-lg mt-5">
+        <div class="row row-cols-1 row-cols-md-5 g-3">
+            <div class="col">
+                <div class="card text-center align-middle">
+                    <img src="https://t4.ftcdn.net/jpg/01/52/74/15/360_F_152741552_YSqMbettKDBGqiC6DXzvsFDqwimQIWMh.jpg"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Hacking</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center align-middle">
+                    <img src="https://www.bitdefender.co.th/media/post/image/p/h/phishing-6573326_1280.png"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Phishing</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center align-middle">
+                    <img src="https://www.pfinancial.com.au/wp-content/uploads/2020/12/iStock-667006530.jpg"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Identity theft</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <a href="" class="card-link">
+                    <div class="card text-center align-middle">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjmhMsHH3KGadZZ5xWTlP78WsDXln368g5BLkCVQ6k9DFcGLB3v38giU1CeIsZoRkRDbc&usqp=CAU"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">Malware and ransomware</h4>
+                        </div>
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center align-middle">
+                <img src="https://d5vna1c75x8sk.cloudfront.net/wp-content/uploads/2021/10/11-OKT-11.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">Cyberbullying</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid mt-5 p-2" style="background-color: #2e488f;">
+        <h2 style="padding-left: 20px; color: #fafafa;">Media about Cyber Crime</h2>
+    </div>
+
+    <div class="container-lg mt-5 mb-5">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qS4ViqnjkC8?si=3n5SAVobISEX0v2f"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="col">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KpWXfu5hOkM?si=HWM6-4WmhLK7qn8D"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5">
+
+    </div>
+
+    <script>
+        fetch('/api/username')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Unauthorized');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('username').textContent = data.username;
+            })
+            .catch(error => {
+                console.error('Error fetching username:', error);
+                document.getElementById('username').textContent = "Guest";
+            });
+    </script>
+
+<script>
+    // Function to check if the user is logged in
+    function isLoggedIn() {
+        // Fetch the login status from the server or check a session variable
+        return sessionStorage.getItem('isLoggedIn') === 'true'; // Adjust as necessary
+    }
+
+    document.querySelectorAll('a[data-requires-login="true"]').forEach(link => {
+        link.addEventListener('click', function(event) {
+            if (!isLoggedIn()) {
+                event.preventDefault(); // Prevent navigation
+                alert('You must log in to access this page.'); // Display a message
+            }
+        });
+    });
+
+</script>
+
+
+</body>
+
+</html>
